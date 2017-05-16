@@ -68,7 +68,8 @@
         android:id="@+id/button_add1"
         android:layout_gravity="center"
         android:layout_alignParentBottom="true"
-        android:layout_alignEnd="@+id/editText_address" />
+        android:layout_alignEnd="@+id/editText_address"
+        android:onClick="viewData" />
 
     <EditText
         android:layout_width="wrap_content"
