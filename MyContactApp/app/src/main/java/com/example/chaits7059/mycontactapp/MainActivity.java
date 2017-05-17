@@ -1,5 +1,6 @@
 package com.example.chaits7059.mycontactapp;
 
+import android.app.AlertDialog;
 import android.database.Cursor;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -63,17 +64,36 @@ public class MainActivity extends AppCompatActivity {
         StringBuffer buffer = new StringBuffer();
 
 
+
+        Log.d("MyContactt", "" + buffer);
+
+        while(res.moveToNext()){
+            for(int i = 0; i<4; i++) {
+                if(i == 1)
+                    buffer.append("NAME: ");
+                if(i == 2)
+                    buffer.append("AGE: ");
+                if(i == 3)
+                    buffer.append("ADDRESS: ");
+                buffer.append(res.getString(i));
+                buffer.append("\n");
+            }
+            buffer.append("\n");
+        }
         //set up a loop with Cursor moveToNext Method
         //    append each COL to buffer
-        //use the getString method
+        //    use the getString method
 
         showMessage("Data", buffer.toString());
 
-
     }
 
-    private void showMessage(String error, String s) {
-
+    private void showMessage(String title, String message) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+        builder.setCancelable(true);  //cancel using back button
+        builder.setTitle(title);
+        builder.setMessage(message);
+        builder.show();
     }
 
 }
