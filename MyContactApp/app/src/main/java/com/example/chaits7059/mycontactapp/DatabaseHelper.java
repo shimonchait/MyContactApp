@@ -45,8 +45,6 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         contentValues.put(COL_4, address);
         long result = db.insert(TABLE_NAME, null, contentValues);
 
-
-
         if(result == -1) return false;
         else return true;
 

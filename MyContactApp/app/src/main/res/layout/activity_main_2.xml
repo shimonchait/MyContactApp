@@ -20,8 +20,71 @@
         android:layout_height="wrap_content"
         android:id="@+id/editText3"
         android:layout_below="@+id/textView"
-        android:layout_alignParentStart="true"
         android:layout_marginTop="75dp"
-        android:layout_alignParentEnd="true" />
+        android:layout_alignParentEnd="true"
+        android:layout_toEndOf="@+id/textView2" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Go Back"
+        android:id="@+id/button2"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentStart="true"
+        android:onClick="end" />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search"
+        android:id="@+id/button3"
+        android:layout_alignParentBottom="true"
+        android:layout_alignEnd="@+id/editText3"
+        android:onClick="searchData" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="By Name:"
+        android:id="@+id/textView2"
+        android:layout_alignBottom="@+id/editText3"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="By Age:"
+        android:id="@+id/textView3"
+        android:layout_marginTop="62dp"
+        android:layout_below="@+id/editText3"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText4"
+        android:layout_alignBottom="@+id/textView3"
+        android:layout_alignEnd="@+id/editText3"
+        android:layout_toEndOf="@+id/textView3" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="By Address:"
+        android:id="@+id/textView4"
+        android:layout_marginTop="81dp"
+        android:layout_below="@+id/textView3"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/editText5"
+        android:layout_alignBottom="@+id/textView4"
+        android:layout_alignEnd="@+id/editText4"
+        android:layout_toEndOf="@+id/textView4" />
 
 </RelativeLayout>

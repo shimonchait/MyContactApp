@@ -1,6 +1,7 @@
 package com.example.chaits7059.mycontactapp;
 
 import android.app.AlertDialog;
+import android.content.Intent;
 import android.database.Cursor;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -63,12 +64,10 @@ public class MainActivity extends AppCompatActivity {
 
         StringBuffer buffer = new StringBuffer();
 
-
-
-        Log.d("MyContactt", "" + buffer);
-
         while(res.moveToNext()){
             for(int i = 0; i<4; i++) {
+                if(i == 0)
+                    buffer.append("CONTACT ");
                 if(i == 1)
                     buffer.append("NAME: ");
                 if(i == 2)
@@ -95,5 +94,12 @@ public class MainActivity extends AppCompatActivity {
         builder.setMessage(message);
         builder.show();
     }
+
+    public void switch1(View view){
+        Intent i = new Intent(this, MainActivity2.class);
+        startActivity(i);
+    }
+
+
 
 }
