@@ -61,7 +61,6 @@ public class MainActivity2 extends AppCompatActivity {
         Cursor res = myDb.getAllData();
         if (res.getCount() == 0) {
 
-            Log.d("MyContactt", "Error: No data found in database");
             Toast.makeText(MainActivity2.this, "ERROR: No Data found in database",
                     Toast.LENGTH_LONG).show();
             return;
@@ -69,7 +68,7 @@ public class MainActivity2 extends AppCompatActivity {
         StringBuffer buffer = new StringBuffer();
         while(res.moveToNext()){
 
-            if(editSearch1.getText().toString().equals(res.getString(1)) && editSearch1.getText().toString().length()>0){
+            if(editSearch1.getText().toString().toLowerCase().equals(res.getString(1).toLowerCase()) && editSearch1.getText().toString().length()>0){
                 for(int i = 0; i<4; i++) {
                     if(i == 0)
                         buffer.append("CONTACT ");
@@ -101,7 +100,7 @@ public class MainActivity2 extends AppCompatActivity {
                 buffer.append("\n\n");
             }
 
-            if(editSearch3.getText().toString().equals(res.getString(3)) && editSearch3.getText().toString().length()>0 && editSearch1.getText().toString().length() == 0 && editSearch2.getText().toString().length() == 0){
+            if(editSearch3.getText().toString().toLowerCase().equals(res.getString(3).toLowerCase()) && editSearch3.getText().toString().length()>0 && editSearch1.getText().toString().length() == 0 && editSearch2.getText().toString().length() == 0){
                 for(int i = 0; i<4; i++) {
                     if(i == 0)
                         buffer.append("CONTACT ");
@@ -118,7 +117,10 @@ public class MainActivity2 extends AppCompatActivity {
             }
 
         }
-        showMessage("Data", buffer.toString());
+        if(buffer.length() == 0){
+            buffer.append("No Contact Found");
+        }
+        showMessage("Contact List", buffer.toString());
     }
 
     private void showMessage(String title, String message) {
