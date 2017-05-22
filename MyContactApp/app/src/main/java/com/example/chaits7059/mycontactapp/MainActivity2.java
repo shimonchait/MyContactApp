@@ -3,6 +3,7 @@ package com.example.chaits7059.mycontactapp;
 import android.app.AlertDialog;
 import android.content.Intent;
 import android.database.Cursor;
+import android.graphics.Color;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -33,6 +34,7 @@ public class MainActivity2 extends AppCompatActivity {
         editSearch1 = (EditText) findViewById(R.id.editText3);
         editSearch2 = (EditText) findViewById(R.id.editText4);
         editSearch3 = (EditText) findViewById(R.id.editText5);
+
     }
 
     @Override

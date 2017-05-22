@@ -39,7 +39,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
         SQLiteDatabase db = this.getWritableDatabase();
         ContentValues contentValues = new ContentValues();
-
+        if(name.equals(""))
+            return false;
         contentValues.put(COL_2, name);
         contentValues.put(COL_3, age);
         contentValues.put(COL_4, address);
